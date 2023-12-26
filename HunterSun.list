@@ -1,4 +1,5 @@
 # HunterSun Domain
+SRC-IP-CIDR,10.21.20.221/32
 DOMAIN-SUFFIX,huntersuntech.com
 DOMAIN-SUFFIX,huntersuntech.ad
 DOMAIN-SUFFIX,winfoundry.com
