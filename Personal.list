@@ -10,4 +10,5 @@ DOMAIN-SUFFIX,mikrotik.com
 DOMAIN-SUFFIX,right.codes
 DOMAIN-SUFFIX,centos.hk
 DOMAIN-SUFFIX,mailcloud.com.tw
+IP-CIDR,203.69.82.80/32
 DOMAIN-SUFFIX,raptorsolutions.lan
