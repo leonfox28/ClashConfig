@@ -395,11 +395,11 @@ rule-providers:
 
   china-media:
     <<: *classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list"
+    url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/ChinaMedia.list"
 
   proxy-media:
     <<: *classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list"
+    url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/ProxyMedia.list"
 
   proxy-gfw:
     <<: *classical
@@ -415,7 +415,7 @@ rule-providers:
 
   download:
     <<: *classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
+    url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/Download.list"
 
 rules:
   - "RULE-SET,personal,🎯 全球直连"
