@@ -123,3 +123,54 @@ dns:
     - www.bilibili.com
     - api.bilibili.com
     - a.w.bilicdn1.com
+
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇸 美国节点
+      - 🚀 手动切换
+      - DIRECT
+
+  - name: 🚀 手动切换
+    type: select
+    include-all-proxies: true
+
+  - name: 🇭🇰 香港节点
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)港|HK|Hong Kong"
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)台|新北|彰化|TW|Taiwan"
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇸🇬 新加坡节点
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)新加坡|坡|狮城|SG|Singapore"
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇯🇵 日本节点
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)日本|东京|JP|Japan"
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: 🇺🇸 美国节点
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States"
+    url: https://www.gstatic.com/generate_204
+    interval: 300
