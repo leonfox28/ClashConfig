@@ -37,6 +37,11 @@ dns:
   proxy-server-nameserver:
     - https://47.240.81.250:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
     - https://akashi.xingyeyun.xyz:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
+  nameserver-policy:
+    +.huyuanzhe.family:
+    - 10.0.0.4
+    +.raptorsolutions.lan:
+    - 10.0.20.2
   fake-ip-filter:
     - "proariaden927861.exzxwmrbnedyoldwod.com"
     - "*.lan"
