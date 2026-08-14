@@ -124,53 +124,320 @@ dns:
     - api.bilibili.com
     - a.w.bilicdn1.com
 
+proxies: []
+
 proxy-groups:
-  - name: 🚀 节点选择
+  - name: "🚀 节点选择"
     type: select
     proxies:
-      - 🇭🇰 香港节点
-      - 🇨🇳 台湾节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇸 美国节点
-      - 🚀 手动切换
+      - "🇭🇰 香港节点"
+      - "🇨🇳 台湾节点"
+      - "🇸🇬 新加坡节点"
+      - "🇯🇵 日本节点"
+      - "🇺🇸 美国节点"
+      - "🇰🇷 韩国节点"
+      - "🚀 手动切换"
       - DIRECT
 
-  - name: 🚀 手动切换
+  - name: "🚀 手动切换"
     type: select
     include-all-proxies: true
+    exclude-type: "Direct|Reject"
 
-  - name: 🇭🇰 香港节点
+  - name: "📲 电报消息"
+    type: select
+    proxies: ["🚀 节点选择", "🇸🇬 新加坡节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换", DIRECT]
+
+  - name: "📹 油管视频"
+    type: select
+    proxies: ["🚀 节点选择", "🇸🇬 新加坡节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换", DIRECT]
+
+  - name: "🎥 奈飞视频"
+    type: select
+    proxies: ["🚀 节点选择", "🇸🇬 新加坡节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换", DIRECT]
+
+  - name: "📺 巴哈姆特"
+    type: select
+    proxies: ["🇨🇳 台湾节点", "🚀 节点选择", "🚀 手动切换", DIRECT]
+
+  - name: "📺 哔哩哔哩"
+    type: select
+    proxies: ["🎯 全球直连", "🇨🇳 台湾节点", "🇭🇰 香港节点"]
+
+  - name: "🌍 国外媒体"
+    type: select
+    proxies: ["🚀 节点选择", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇸🇬 新加坡节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换", DIRECT]
+
+  - name: "🌏 国内媒体"
+    type: select
+    proxies: [DIRECT, "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇸🇬 新加坡节点", "🇯🇵 日本节点", "🚀 手动切换"]
+
+  - name: "📢 谷歌FCM"
+    type: select
+    proxies: [DIRECT, "🚀 节点选择", "🇺🇸 美国节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇸🇬 新加坡节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🚀 手动切换"]
+
+  - name: "Ⓜ️ 微软云盘"
+    type: select
+    proxies: [DIRECT, "🚀 节点选择", "🇺🇸 美国节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇸🇬 新加坡节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🚀 手动切换"]
+
+  - name: "Ⓜ️ 微软服务"
+    type: select
+    proxies: [DIRECT, "🚀 节点选择", "🇺🇸 美国节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇸🇬 新加坡节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🚀 手动切换"]
+
+  - name: "🍎 苹果服务"
+    type: select
+    proxies: [DIRECT, "🚀 节点选择", "🇺🇸 美国节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇸🇬 新加坡节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🚀 手动切换"]
+
+  - name: "🎮 游戏平台"
+    type: select
+    proxies: [DIRECT, "🚀 节点选择", "🇺🇸 美国节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇸🇬 新加坡节点", "🇯🇵 日本节点", "🇰🇷 韩国节点", "🚀 手动切换"]
+
+  - name: "🎶 网易音乐"
+    type: select
+    proxies: [DIRECT, "🚀 节点选择"]
+    include-all-proxies: true
+    filter: "(?i)网易|音乐|解锁|Music|NetEase"
+    exclude-type: "Direct|Reject"
+
+  - name: "💬 AI"
+    type: select
+    proxies: ["🚀 节点选择", "🇸🇬 新加坡节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换", DIRECT]
+
+  - name: "🎯 全球直连"
+    type: select
+    proxies: [DIRECT, "🚀 节点选择"]
+
+  - name: "🛑 广告拦截"
+    type: select
+    proxies: [REJECT, DIRECT]
+
+  - name: "🍃 应用净化"
+    type: select
+    proxies: [REJECT, DIRECT]
+
+  - name: "🐟 漏网之鱼"
+    type: select
+    proxies: ["🚀 节点选择", DIRECT, "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇸🇬 新加坡节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换"]
+
+  - name: "🇭🇰 香港节点"
     type: url-test
     include-all-proxies: true
     filter: "(?i)港|HK|Hong Kong"
-    url: https://www.gstatic.com/generate_204
+    exclude-type: "Direct|Reject"
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
+    tolerance: 50
+    lazy: true
 
-  - name: 🇨🇳 台湾节点
+  - name: "🇯🇵 日本节点"
     type: url-test
     include-all-proxies: true
-    filter: "(?i)台|新北|彰化|TW|Taiwan"
-    url: https://www.gstatic.com/generate_204
+    filter: "(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan"
+    exclude-type: "Direct|Reject"
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
+    tolerance: 50
+    lazy: true
 
-  - name: 🇸🇬 新加坡节点
-    type: url-test
-    include-all-proxies: true
-    filter: "(?i)新加坡|坡|狮城|SG|Singapore"
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-
-  - name: 🇯🇵 日本节点
-    type: url-test
-    include-all-proxies: true
-    filter: "(?i)日本|东京|JP|Japan"
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-
-  - name: 🇺🇸 美国节点
+  - name: "🇺🇸 美国节点"
     type: url-test
     include-all-proxies: true
     filter: "(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States"
-    url: https://www.gstatic.com/generate_204
+    exclude-type: "Direct|Reject"
+    url: "https://www.gstatic.com/generate_204"
     interval: 300
+    tolerance: 150
+    lazy: true
+
+  - name: "🇨🇳 台湾节点"
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)台|新北|彰化|TW|Taiwan"
+    exclude-type: "Direct|Reject"
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+
+  - name: "🇸🇬 新加坡节点"
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)新加坡|坡|狮城|SG|Singapore"
+    exclude-type: "Direct|Reject"
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+
+  - name: "🇰🇷 韩国节点"
+    type: url-test
+    include-all-proxies: true
+    filter: "(?i)KR|Korea|KOR|首尔|韩|韓"
+    exclude-type: "Direct|Reject"
+    url: "https://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    lazy: true
+
+rule-providers:
+  personal: &classical
+    type: http
+    behavior: classical
+    format: text
+    interval: 86400
+    url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/Personal.list"
+
+  local-area-network:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
+
+  unban:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
+
+  ban-ad:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list"
+
+  ban-program-ad:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list"
+
+  google-fcm:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list"
+
+  google-cn:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list"
+
+  steam-cn:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list"
+
+  onedrive:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list"
+
+  microsoft:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list"
+
+  apple:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
+
+  telegram:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
+
+  netease-music:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/NetEaseMusic.list"
+
+  ai:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/AI.list"
+
+  openai:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list"
+
+  epic:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list"
+
+  origin:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.list"
+
+  sony:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list"
+
+  steam:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Steam.list"
+
+  nintendo:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.list"
+
+  youtube:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
+
+  netflix:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list"
+
+  bahamut:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bahamut.list"
+
+  bilibili-hmt:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/BilibiliHMT.list"
+
+  bilibili:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list"
+
+  china-media:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaMedia.list"
+
+  proxy-media:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list"
+
+  proxy-gfw:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list"
+
+  china-domain:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
+
+  china-company-ip:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
+
+  download:
+    <<: *classical
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
+
+rules:
+  - "RULE-SET,personal,🎯 全球直连"
+  - "RULE-SET,local-area-network,🎯 全球直连"
+  - "RULE-SET,unban,🎯 全球直连"
+  - "RULE-SET,ban-ad,🛑 广告拦截"
+  - "RULE-SET,ban-program-ad,🍃 应用净化"
+  - "RULE-SET,google-fcm,📢 谷歌FCM"
+  - "RULE-SET,google-cn,🎯 全球直连"
+  - "RULE-SET,steam-cn,🎯 全球直连"
+  - "RULE-SET,onedrive,Ⓜ️ 微软云盘"
+  - "RULE-SET,microsoft,Ⓜ️ 微软服务"
+  - "RULE-SET,apple,🍎 苹果服务"
+  - "RULE-SET,telegram,📲 电报消息"
+  - "RULE-SET,netease-music,🎶 网易音乐"
+  - "RULE-SET,ai,💬 AI"
+  - "RULE-SET,openai,💬 AI"
+  - "RULE-SET,epic,🎮 游戏平台"
+  - "RULE-SET,origin,🎮 游戏平台"
+  - "RULE-SET,sony,🎮 游戏平台"
+  - "RULE-SET,steam,🎮 游戏平台"
+  - "RULE-SET,nintendo,🎮 游戏平台"
+  - "RULE-SET,youtube,📹 油管视频"
+  - "RULE-SET,netflix,🎥 奈飞视频"
+  - "RULE-SET,bahamut,📺 巴哈姆特"
+  - "RULE-SET,bilibili-hmt,📺 哔哩哔哩"
+  - "RULE-SET,bilibili,📺 哔哩哔哩"
+  - "RULE-SET,china-media,🌏 国内媒体"
+  - "RULE-SET,proxy-media,🌍 国外媒体"
+  - "RULE-SET,proxy-gfw,🚀 节点选择"
+  - "RULE-SET,china-domain,🎯 全球直连"
+  - "RULE-SET,china-company-ip,🎯 全球直连"
+  - "RULE-SET,download,🎯 全球直连"
+  - "GEOIP,CN,🎯 全球直连"
+  - "MATCH,🐟 漏网之鱼"
