@@ -54,6 +54,8 @@ dns:
     +.raptorsolutions.lan:
     - 10.0.20.2
   fake-ip-filter:
+    - "+.dns.iroh.link"
+    - "+.relay.zedra.dev"
     - "proariaden927861.exzxwmrbnedyoldwod.com"
     - "*.lan"
     - "*.localdomain"
