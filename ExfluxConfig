@@ -88,6 +88,6 @@ custom_proxy_group=🇰🇷 韩国节点`url-test`(KR|Korea|KOR|首尔|韩|韓)`
 enable_rule_generator=true
 overwrite_original_rules=true
 
-clash_rule_base=https://raw.githubusercontent.com/leonfox28/ClashConfig/main/GeneralClashConfig.yml
+clash_rule_base=https://raw.githubusercontent.com/leonfox28/ClashConfig/main/exflux.yml
 
 ;luck
