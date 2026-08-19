@@ -53,6 +53,8 @@ dns:
     - 10.0.0.4
     +.raptorsolutions.lan:
     - 10.0.20.2
+    +.dns.iroh.link:
+    - https://8.8.8.8/dns-query
   fake-ip-filter:
     - "proariaden927861.exzxwmrbnedyoldwod.com"
     - "*.lan"
@@ -134,7 +136,9 @@ dns:
     - api.bilibili.com
     - a.w.bilicdn1.com
 
-proxies: []
+proxies:
+  - name: dns-out
+    type: dns
 
 proxy-groups:
   - name: "🚀 节点选择"
@@ -418,6 +422,8 @@ rule-providers:
     url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/Download.list"
 
 rules:
+  - "AND,((DST-PORT,53),(IP-CIDR,8.8.8.8/32,no-resolve)),dns-out"
+  - "AND,((DST-PORT,53),(IP-CIDR,8.8.4.4/32,no-resolve)),dns-out"
   - "RULE-SET,personal,🎯 全球直连"
   - "RULE-SET,local-area-network,🎯 全球直连"
   - "RULE-SET,unban,🎯 全球直连"
