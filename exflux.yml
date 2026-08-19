@@ -53,6 +53,8 @@ dns:
     - 10.0.0.4
     +.raptorsolutions.lan:
     - 10.0.20.2
+    +.dns.iroh.link:
+    - https://8.8.8.8/dns-query
   fake-ip-filter:
     - "+.dns.iroh.link"
     - "+.relay.zedra.dev"
