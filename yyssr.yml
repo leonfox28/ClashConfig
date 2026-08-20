@@ -56,6 +56,8 @@ dns:
     +.dns.iroh.link:
     - https://8.8.8.8/dns-query
   fake-ip-filter:
+    - +.dns.iroh.link
+    - +.relay.zedra.dev
     - "proariaden927861.exzxwmrbnedyoldwod.com"
     - "*.lan"
     - "*.localdomain"
