@@ -15,5 +15,5 @@ IP-CIDR,203.69.82.80/32
 IP-CIDR,203.69.82.10/32
 IP-CIDR,203.69.82.12/32
 DOMAIN-SUFFIX,raptorsolutions.lan
-DOMAIN-SUFFIX,dns.iroh.link
+DOMAIN-SUFFIX,iroh.link
 DOMAIN-SUFFIX,relay.zedra.dev
