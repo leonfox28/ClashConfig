@@ -163,6 +163,10 @@ proxy-groups:
     include-all-proxies: true
     exclude-type: "Direct|Reject"
 
+  - name: "📲 个人服务"
+    type: select
+    proxies: [DIRECT, "🚀 节点选择", "🇸🇬 新加坡节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换"]
+  
   - name: "📲 电报消息"
     type: select
     proxies: ["🚀 节点选择", "🇸🇬 新加坡节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换", DIRECT]
@@ -433,7 +437,7 @@ rule-providers:
 rules:
   - "AND,((DST-PORT,53),(IP-CIDR,8.8.8.8/32,no-resolve)),dns-out"
   - "AND,((DST-PORT,53),(IP-CIDR,8.8.4.4/32,no-resolve)),dns-out"
-  - "RULE-SET,personal-proxy,🎯 全球直连"
+  - "RULE-SET,personal-proxy,📲 个人服务"
   - "RULE-SET,personal,🎯 全球直连"
   - "RULE-SET,local-area-network,🎯 全球直连"
   - "RULE-SET,unban,🎯 全球直连"
