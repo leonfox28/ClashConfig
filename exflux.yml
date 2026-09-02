@@ -55,6 +55,9 @@ dns:
     - 10.0.20.2
     +.dns.iroh.link:
     - https://8.8.8.8/dns-query
+    'cpa.zenithconsulting.cn':
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   fake-ip-filter:
     - +.eo.dnse5.com
     - +.mynetname.net
