@@ -46,15 +46,15 @@ dns:
     - tls://223.5.5.5:853
     - tls://1.12.12.12:853
   nameserver-policy:
-    "geosite:cn,private":
-    - tls://223.5.5.5:853
-    - tls://1.12.12.12:853
     +.huyuanzhe.family:
     - 10.0.0.4
     +.raptorsolutions.lan:
     - 10.0.20.2
     +.dns.iroh.link:
     - https://8.8.8.8/dns-query
+    "geosite:cn,private":
+    - tls://223.5.5.5:853
+    - tls://1.12.12.12:853
   fake-ip-filter:
     - +.eo.dnse5.com
     - +.mynetname.net
