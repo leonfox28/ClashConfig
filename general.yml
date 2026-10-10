@@ -43,12 +43,12 @@ dns:
     - https://1.1.1.1/dns-query
     - https://8.8.8.8/dns-query
   proxy-server-nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - tls://223.5.5.5:853
+    - tls://1.12.12.12:853
   nameserver-policy:
     "geosite:cn,private":
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - tls://223.5.5.5:853
+    - tls://1.12.12.12:853
     +.huyuanzhe.family:
     - 10.0.0.4
     +.raptorsolutions.lan:
