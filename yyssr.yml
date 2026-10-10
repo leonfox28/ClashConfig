@@ -47,8 +47,8 @@ dns:
     - https://doh-cu-hpbidozeia.cn-chengdu.fcapp.run/dns-query/e8874ea9-2426-43de-9e2c-4ac62a287d0d
   nameserver-policy:
     "geosite:cn,private":
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - tls://223.5.5.5:853
+    - tls://1.12.12.12:853
     +.huyuanzhe.family:
     - 10.0.0.4
     +.raptorsolutions.lan:
