@@ -40,24 +40,21 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
   nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-  fallback:
     - https://1.1.1.1/dns-query
     - https://8.8.8.8/dns-query
   proxy-server-nameserver:
     - https://47.240.81.250:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
     - https://akashi.xingyeyun.xyz:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
   nameserver-policy:
+    "geosite:cn,private":
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
     +.huyuanzhe.family:
     - 10.0.0.4
     +.raptorsolutions.lan:
     - 10.0.20.2
     +.dns.iroh.link:
     - https://8.8.8.8/dns-query
-    'cpa.zenithconsulting.cn':
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
   fake-ip-filter:
     - +.eo.dnse5.com
     - +.mynetname.net
