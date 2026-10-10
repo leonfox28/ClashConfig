@@ -52,6 +52,8 @@ dns:
     - 10.0.20.2
     +.dns.iroh.link:
     - https://8.8.8.8/dns-query
+    cpa.zenithconsulting.cn:
+    - tls://223.5.5.5:853
     "geosite:cn,private":
     - tls://223.5.5.5:853
     - tls://223.6.6.6:853
