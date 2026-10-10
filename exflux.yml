@@ -47,8 +47,8 @@ dns:
     - https://akashi.xingyeyun.xyz:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
   nameserver-policy:
     "geosite:cn,private":
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
+    - tls://223.5.5.5:853
+    - tls://1.12.12.12:853
     +.huyuanzhe.family:
     - 10.0.0.4
     +.raptorsolutions.lan:
