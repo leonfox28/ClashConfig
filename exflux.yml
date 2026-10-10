@@ -46,15 +46,15 @@ dns:
     - https://47.240.81.250:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
     - https://akashi.xingyeyun.xyz:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
   nameserver-policy:
-    "geosite:cn,private":
-    - tls://223.5.5.5:853
-    - tls://1.12.12.12:853
     +.huyuanzhe.family:
     - 10.0.0.4
     +.raptorsolutions.lan:
     - 10.0.20.2
     +.dns.iroh.link:
     - https://8.8.8.8/dns-query
+    "geosite:cn,private":
+    - tls://223.5.5.5:853
+    - tls://1.12.12.12:853
   fake-ip-filter:
     - +.eo.dnse5.com
     - +.mynetname.net
