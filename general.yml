@@ -216,7 +216,7 @@ proxy-groups:
     proxies: [DIRECT, "🚀 节点选择"]
     include-all-proxies: true
     filter: "(?i)网易|音乐|解锁|Music|NetEase"
-    exclude-type: "Direct|Reject"
+    exclude-type: "Reject|Dns"
 
   - name: "💬 AI"
     type: select
