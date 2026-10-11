@@ -161,7 +161,7 @@ proxy-groups:
   - name: "🚀 手动切换"
     type: select
     include-all-proxies: true
-    exclude-type: "Direct|Reject"
+    exclude-type: "Direct|Reject|Dns"
 
   - name: "📲 个人服务"
     type: select
