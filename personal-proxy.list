@@ -1,4 +1,5 @@
 DOMAIN-SUFFIX,cpa-eo.zenithconsulting.cn
 DOMAIN-SUFFIX,cpa-tunnel.zenithconsulting.cn
 DOMAIN-SUFFIX,kiro.zenithconsulting.cn
+AND,((DOMAIN-SUFFIX,iroh.link),(NETWORK,TCP))
 #DOMAIN-SUFFIX,cpa.zenithconsulting.cn
