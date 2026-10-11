@@ -33,15 +33,15 @@ profile:
 dns:
   enable: true
   ipv6: false
-  respect-rules: true
+  respect-rules: false
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
   nameserver:
-    - https://1.1.1.1/dns-query
-    - https://8.8.8.8/dns-query
+    - "https://1.1.1.1/dns-query#🚀 节点选择"
+    - "https://8.8.8.8/dns-query#🚀 节点选择"
   proxy-server-nameserver:
     - https://47.240.81.250:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
     - https://akashi.xingyeyun.xyz:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
@@ -56,19 +56,20 @@ dns:
     - tls://223.5.5.5:853
     - tls://223.6.6.6:853
   fake-ip-filter:
+    - +.huyuanzhe.family
     - +.eo.dnse5.com
     - +.mynetname.net
     - +.zenithconsulting.cn
     - +.iroh.link
     - +.relay.zedra.dev
     - "proariaden927861.exzxwmrbnedyoldwod.com"
-    - "*.lan"
+    - +.lan
     - "*.localdomain"
     - "*.example"
     - "*.invalid"
     - "*.localhost"
     - "*.test"
-    - "*.local"
+    - +.local
     - "*.home.arpa"
     - time.*.com
     - time.*.gov
