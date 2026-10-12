@@ -56,7 +56,6 @@ dns:
     - tls://223.6.6.6:853
   fake-ip-filter:
     - +.huyuanzhe.family
-    - +.eo.dnse5.com
     - +.mynetname.net
     - +.zenithconsulting.cn
     - +.iroh.link
@@ -224,7 +223,7 @@ proxy-groups:
 
   - name: "💬 AI"
     type: select
-    proxies: ["🚀 节点选择", "🇸🇬 新加坡节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换", DIRECT]
+    proxies: ["🚀 节点选择", "🇸🇬 新加坡节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换", DIRECT]
 
   - name: "🎯 全球直连"
     type: select
