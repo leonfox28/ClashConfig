@@ -263,11 +263,11 @@ rule-anchor:
 rule-providers:
   personal-proxy:
     <<: *classic
-    url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/personal-proxy.list"
+    url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/rule/personal-proxy.list"
 
   personal:
     <<: *classic
-    url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/Personal.list"
+    url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/rule/Personal.list"
 
   private:
     <<: *domain
