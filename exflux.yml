@@ -333,10 +333,6 @@ rule-providers:
     <<: *classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list"
 
-  google-cn:
-    <<: *classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list"
-
   steam-cn:
     <<: *classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/SteamCN.list"
@@ -443,7 +439,6 @@ rules:
   - "RULE-SET,ban-ad,🛑 广告拦截"
   - "RULE-SET,ban-program-ad,🍃 应用净化"
   - "RULE-SET,google-fcm,📢 谷歌FCM"
-  - "RULE-SET,google-cn,🎯 全球直连"
   - "RULE-SET,steam-cn,🎯 全球直连"
   - "RULE-SET,ai,💬 AI"
   - "RULE-SET,openai,💬 AI"
