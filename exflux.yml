@@ -44,7 +44,6 @@ dns:
     - "https://8.8.8.8/dns-query#🚀 节点选择"
   proxy-server-nameserver:
     - https://47.240.81.250:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
-    - https://akashi.xingyeyun.xyz:8053/dns-query/ffbdcac8687aeb62ffc1b5764b63c18aae879f6404cf5666
   nameserver-policy:
     +.huyuanzhe.family:
     - 10.0.0.4
