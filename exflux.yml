@@ -317,10 +317,6 @@ rule-providers:
     <<: *classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
 
-  unban:
-    <<: *classical
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
-
   ban-ad:
     <<: *classical
     url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list"
@@ -435,7 +431,6 @@ rules:
   - "RULE-SET,personal-proxy,📲 个人服务"
   - "RULE-SET,personal,🎯 全球直连"
   - "RULE-SET,local-area-network,🎯 全球直连"
-  - "RULE-SET,unban,🎯 全球直连"
   - "RULE-SET,ban-ad,🛑 广告拦截"
   - "RULE-SET,ban-program-ad,🍃 应用净化"
   - "RULE-SET,google-fcm,📢 谷歌FCM"
