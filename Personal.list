@@ -1,19 +1,16 @@
 # HunterSun Domain
-IP-CIDR,10.21.20.221/32
-IP-CIDR,161.118.254.79/32
-DOMAIN-SUFFIX,huntersuntech.com
-DOMAIN-SUFFIX,huntersuntech.ad
+IP-CIDR,10.21.20.221/32,no-resolve
+IP-CIDR,161.118.254.79/32,no-resolve
 DOMAIN-SUFFIX,winfoundry.com
-DOMAIN-SUFFIX,chipbetter.com
 DOMAIN-SUFFIX,huyuanzhe.family
 DOMAIN-SUFFIX,mynetname.net
 DOMAIN-SUFFIX,mikrotik.com
 DOMAIN-SUFFIX,right.codes
 DOMAIN-SUFFIX,centos.hk
 DOMAIN-SUFFIX,mailcloud.com.tw
-IP-CIDR,203.69.82.80/32
-IP-CIDR,203.69.82.10/32
-IP-CIDR,203.69.82.12/32
+IP-CIDR,203.69.82.80/32,no-resolve
+IP-CIDR,203.69.82.10/32,no-resolve
+IP-CIDR,203.69.82.12/32,no-resolve
 DOMAIN-SUFFIX,raptorsolutions.lan
 DOMAIN-SUFFIX,iroh.link
 DOMAIN-SUFFIX,relay.zedra.dev
