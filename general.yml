@@ -33,15 +33,15 @@ profile:
 dns:
   enable: true
   ipv6: false
-  respect-rules: true
+  respect-rules: false
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
   nameserver:
-    - https://1.1.1.1/dns-query
-    - https://8.8.8.8/dns-query
+    - "https://1.1.1.1/dns-query#🚀 节点选择"
+    - "https://8.8.8.8/dns-query#🚀 节点选择"
   proxy-server-nameserver:
     - tls://223.5.5.5:853
     - tls://223.6.6.6:853
@@ -56,19 +56,20 @@ dns:
     - tls://223.5.5.5:853
     - tls://223.6.6.6:853
   fake-ip-filter:
+    - +.huyuanzhe.family
     - +.eo.dnse5.com
     - +.mynetname.net
     - +.zenithconsulting.cn
     - +.iroh.link
     - +.relay.zedra.dev
     - "proariaden927861.exzxwmrbnedyoldwod.com"
-    - "*.lan"
+    - +.lan
     - "*.localdomain"
     - "*.example"
     - "*.invalid"
     - "*.localhost"
     - "*.test"
-    - "*.local"
+    - +.local
     - "*.home.arpa"
     - time.*.com
     - time.*.gov
@@ -163,6 +164,10 @@ proxy-groups:
     include-all-proxies: true
     exclude-type: "Direct|Reject|Dns"
 
+  - name: "📲 个人服务"
+    type: select
+    proxies: [DIRECT, "🚀 节点选择", "🇸🇬 新加坡节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换"]
+  
   - name: "📲 电报消息"
     type: select
     proxies: ["🚀 节点选择", "🇸🇬 新加坡节点", "🇭🇰 香港节点", "🇨🇳 台湾节点", "🇯🇵 日本节点", "🇺🇸 美国节点", "🇰🇷 韩国节点", "🚀 手动切换", DIRECT]
@@ -299,11 +304,15 @@ proxy-groups:
     lazy: true
 
 rule-providers:
-  personal: &classical
+  personal-proxy: &classical
     type: http
     behavior: classical
     format: text
     interval: 86400
+    url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/personal-proxy.list"
+
+  personal:
+    <<: *classical
     url: "https://raw.githubusercontent.com/leonfox28/ClashConfig/main/Personal.list"
 
   local-area-network:
@@ -429,6 +438,7 @@ rule-providers:
 rules:
   - "AND,((DST-PORT,53),(IP-CIDR,8.8.8.8/32,no-resolve)),dns-out"
   - "AND,((DST-PORT,53),(IP-CIDR,8.8.4.4/32,no-resolve)),dns-out"
+  - "RULE-SET,personal-proxy,📲 个人服务"
   - "RULE-SET,personal,🎯 全球直连"
   - "RULE-SET,local-area-network,🎯 全球直连"
   - "RULE-SET,unban,🎯 全球直连"
