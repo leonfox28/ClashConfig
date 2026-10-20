@@ -61,6 +61,7 @@ dns:
       - tls://223.5.5.5:853
       - tls://223.6.6.6:853
   fake-ip-filter:
+    - "+.fedoraproject.org"
     - "+.huyuanzhe.family"
     - "+.mynetname.net"
     - "+.zenithconsulting.cn"
