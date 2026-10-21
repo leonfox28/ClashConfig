@@ -393,8 +393,8 @@ rules:
   - "AND,((DST-PORT,53),(IP-CIDR,8.8.4.4/32,no-resolve)),dns-out"
 
   # 2. 个人私有网络及穿透
-  - "RULE-SET,personal-proxy,📲 个人服务"
   - "RULE-SET,personal,🎯 全球直连"
+  - "RULE-SET,personal-proxy,📲 个人服务"
   - "RULE-SET,private,🎯 全球直连"
   - "GEOIP,private,🎯 全球直连,no-resolve"
 
