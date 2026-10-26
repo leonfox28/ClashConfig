@@ -3,33 +3,34 @@
 
 [General]
 # ip
-ip-mode=v4-only
-ipv6-vif=off
+ip-mode = v4-only
+ipv6-vif = off
 # DNS
-dns-server=system
-sni-sniffing=true
-disable-stun=true
-dns-reject-mode=LoopbackIP
-domain-reject-mode=DNS
-udp-fallback-mode=REJECT
-wifi-access-http-port=7222
-wifi-access-socks5-port=7221
-allow-wifi-access=false
-interface-mode=auto
-test-timeout=5
-disconnect-on-policy-change=false
-internet-test-url=http://connectivitycheck.platform.hicloud.com/generate_204
-proxy-test-url=http://www.gstatic.com/generate_204
-resource-parser=https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
-geoip-url=https://geodata.kelee.one/Country-Masaiki.mmdb
-ipasn-url=https://geodata.kelee.one/GeoLite2-ASN-P3TERX.mmdb
-skip-proxy=192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, e.crashlynatics.com
-bypass-tun=10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32
+dns-server = system
+sni-sniffing = true
+disable-stun = true
+dns-reject-mode = LoopbackIP
+domain-reject-mode = DNS
+udp-fallback-mode = REJECT
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+allow-wifi-access = false
+interface-mode = auto
+test-timeout = 5
+disconnect-on-policy-change = false
+internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
+proxy-test-url = http://www.gstatic.com/generate_204
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+geoip-url = https://geodata.kelee.one/Country-Masaiki.mmdb
+ipasn-url = https://geodata.kelee.one/GeoLite2-ASN-P3TERX.mmdb
+skip-proxy = 192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
 
 
 [Proxy]
 
 [Remote Proxy]
+ExFlux = https://47.240.81.250/s/wccDPeQ6bmK0M69B9GPTJILkuzQDo1LJ?c=loon,udp=true,block-quic=true,fast-open=default,vmess-aead=default,skip-cert-verify=true,enabled=true,flexible-sni=false
 
 
 [Proxy Chain]
@@ -71,8 +72,6 @@ FINAL,节点选择
 [Remote Rule]
 https://rule.kelee.one/Loon/Lan.lsr, policy=DIRECT, tag=Lan.lsr, enabled=true
 https://rule.kelee.one/Loon/Download.lsr, policy=DIRECT, tag=Download.lsr, enabled=true
-https://rule.kelee.one/Loon/China.lsr, policy=国内服务, tag=China.lsr, enabled=true
-https://rule.kelee.one/Loon/ChinaIPs.lsr, policy=国内服务, tag=ChinaIPs.lsr, enabled=true
 https://rule.kelee.one/Loon/OpenAI.lsr, policy=AI 服务, tag=OpenAI.lsr, enabled=true
 https://rule.kelee.one/Loon/Anthropic.lsr, policy=AI 服务, tag=Anthropic.lsr, enabled=true
 https://rule.kelee.one/Loon/YouTube.lsr, policy=油管视频, tag=YouTube.lsr, enabled=true
@@ -81,10 +80,12 @@ https://rule.kelee.one/Loon/Telegram.lsr, policy=电报消息, tag=Telegram.lsr,
 https://rule.kelee.one/Loon/GitHub.lsr, policy=代码托管, tag=GitHub.lsr, enabled=true
 https://rule.kelee.one/Loon/GitLab.lsr, policy=代码托管, tag=GitLab.lsr, enabled=true
 https://rule.kelee.one/Loon/Atlassian.lsr, policy=代码托管, tag=Atlassian.lsr, enabled=true
+https://rule.kelee.one/Loon/SteamCN.lsr, policy=国内服务, tag=SteamCN.lsr, enabled=true
+https://rule.kelee.one/Loon/Game.lsr, policy=游戏平台, tag=Game.lsr, enabled=true
 https://rule.kelee.one/Loon/Microsoft.lsr, policy=微软服务, tag=Microsoft.lsr, enabled=true
 https://rule.kelee.one/Loon/Apple.lsr, policy=苹果服务, tag=Apple.lsr, enabled=true
-https://rule.kelee.one/Loon/Game.lsr, policy=游戏平台, tag=Game.lsr, enabled=true
-https://rule.kelee.one/Loon/SteamCN.lsr, policy=国内服务, tag=SteamCN.lsr, enabled=true
+https://rule.kelee.one/Loon/China.lsr, policy=国内服务, tag=China.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaIPs.lsr, policy=国内服务, tag=ChinaIPs.lsr, enabled=true
 https://raw.githubusercontent.com/Loon0x00/LoonLiteRules/main/direct/cn.list, policy=国内服务, tag=GEOIP_CN, enabled=true
 
 [Rewrite]
@@ -92,17 +93,19 @@ https://raw.githubusercontent.com/Loon0x00/LoonLiteRules/main/direct/cn.list, po
 [Script]
 
 [Plugin]
+https://kelee.one/Tool/Loon/Lpx/Weibo_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Weibo_intl_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, pin=true, enabled=true
 https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, pin=true, enabled=true
-https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, enabled=false
 https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=节点选择, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx, policy=DIRECT, enabled=false
-https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=节点选择, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=节点选择, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=节点选择, enabled=true
+https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx, policy=DIRECT, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=节点选择, enabled=false
+https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=节点选择, enabled=false
+https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=节点选择, enabled=false
 
 [Mitm]
-ca-p12 = 
-ca-passphrase = 
+ca-p12 = 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
+ca-passphrase = C8EY5G2N
 skip-server-cert-verify = false
