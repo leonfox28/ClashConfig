@@ -63,7 +63,6 @@ US_Filter = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤�
 SG_Filter = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
 
 [Rule]
-DOMAIN-SUFFIX,zenithconsulting.cn,个人服务
 #Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
 #Strategy:DIRECT,PROXY,REJECT
 #Options:no-resolve(only for IP-CIDR,IP-CIDR2,GEOIP,IP-ASN)
@@ -71,6 +70,8 @@ DOMAIN-SUFFIX,zenithconsulting.cn,个人服务
 FINAL,节点选择
 
 [Remote Rule]
+https://raw.githubusercontent.com/leonfox28/ClashConfig/main/rule/loon/Personal.lsr, policy=DIRECT, tag=Personal.lsr, enabled=true
+https://raw.githubusercontent.com/leonfox28/ClashConfig/main/rule/loon/personal-proxy.lsr, policy=个人服务, tag=personal-proxy.lsr, enabled=true
 https://rule.kelee.one/Loon/Lan.lsr, policy=DIRECT, tag=Lan.lsr, enabled=true
 https://rule.kelee.one/Loon/Download.lsr, policy=DIRECT, tag=Download.lsr, enabled=true
 https://rule.kelee.one/Loon/OpenAI.lsr, policy=AI 服务, tag=OpenAI.lsr, enabled=true

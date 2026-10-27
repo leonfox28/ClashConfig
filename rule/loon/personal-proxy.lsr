@@ -1,0 +1,5 @@
+# Source: rule/personal-proxy.list
+# Loon remote rule policy: 个人服务
+# Loon 3.1.7+: include TCP traffic classified as HTTP or HTTPS.
+DOMAIN-SUFFIX,zenithconsulting.cn
+AND,((DOMAIN-SUFFIX,iroh.link),(OR,((PROTOCOL,TCP),(PROTOCOL,HTTP),(PROTOCOL,HTTPS))))

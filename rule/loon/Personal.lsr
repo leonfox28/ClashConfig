@@ -1,0 +1,19 @@
+# Source: rule/Personal.list
+# Loon remote rule policy: DIRECT
+# Private LAN IPs are covered by the main config and Lan.lsr.
+IP-CIDR,161.118.254.79/32,no-resolve
+DOMAIN-SUFFIX,winfoundry.com
+DOMAIN-SUFFIX,huyuanzhe.family
+DOMAIN-SUFFIX,mynetname.net
+DOMAIN-SUFFIX,mikrotik.com
+DOMAIN-SUFFIX,right.codes
+DOMAIN-SUFFIX,centos.hk
+DOMAIN-SUFFIX,mailcloud.com.tw
+IP-CIDR,203.69.82.80/32,no-resolve
+IP-CIDR,203.69.82.10/32,no-resolve
+IP-CIDR,203.69.82.12/32,no-resolve
+DOMAIN-SUFFIX,raptorsolutions.lan
+# Match UDP traffic, including Loon's QUIC and STUN protocol classifications.
+AND,((DOMAIN-SUFFIX,iroh.link),(OR,((PROTOCOL,UDP),(PROTOCOL,QUIC),(PROTOCOL,STUN))))
+DOMAIN-SUFFIX,relay.zedra.dev
+DOMAIN-SUFFIX,cpa.zenithconsulting.cn

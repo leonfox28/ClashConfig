@@ -1,6 +1,8 @@
-# ClashConfig (Mihomo / Clash Meta 配置仓库)
+# ClashConfig (Mihomo / Clash Meta / Loon 配置仓库)
 
 个人自用的 **Mihomo (Clash Meta)** 配置文件与自定义分流规则仓库。采用二进制 `.mrs` 规则集、精细化 DNS 分流与防泄漏策略，以及按地区自动测速的策略组架构。
+
+另提供 **Loon** 配置 `loon.lcf` 和转换后的个人规则，使用方式见下方「Loon 个人规则」。
 
 ---
 
@@ -11,9 +13,13 @@
 ├── general.yml              # 通用配置模板（适用于常规订阅）
 ├── exflux.yml               # Exflux 专属配置模板
 ├── yyssr.yml                # YYSSR 专属配置模板
+├── loon.lcf                 # Loon 配置模板
 └── rule/                    # 个人自定义规则目录
     ├── Personal.list        # 个人直连规则（内网网段、私有域名、指定 IP 直连）
-    └── personal-proxy.list  # 个人代理规则（指定个人服务走「📲 个人服务」策略组）
+    ├── personal-proxy.list  # 个人代理规则（指定个人服务走「📲 个人服务」策略组）
+    └── loon/
+        ├── Personal.lsr       # Loon 个人直连规则
+        └── personal-proxy.lsr # Loon 个人服务规则
 ```
 
 ---
@@ -99,3 +105,30 @@
 ### 3. 自定义规则维护
 - 需要强制**直连**的个人域名或内网 IP，请添加至 `rule/Personal.list`。
 - 需要单独控制走向（走 `📲 个人服务` 策略组）的域名或规则，请添加至 `rule/personal-proxy.list`。
+
+### 4. Loon 个人规则
+
+`rule/loon/Personal.lsr` 从 `rule/Personal.list` 转换，省略已由主配置 `10.0.0.0/8` 绕过设置及 `Lan.lsr` 覆盖的 `10.21.20.221/32`，保留 15 条规则，其余 IP 规则保留 `no-resolve`。其中 `iroh.link` 的直连规则限定为 UDP，并显式包含 Loon 的 QUIC、STUN 协议类型。`rule/loon/personal-proxy.lsr` 保留 2 条规则，将 Mihomo 的 `NETWORK,TCP` 转换为 Loon 的 TCP、HTTP、HTTPS 协议条件。逻辑规则和协议规则需要 Loon 3.1.7 或更新版本，语法见官方[逻辑规则](https://nsloon.app/docs/Rule/logic_rule/)和[协议规则](https://nsloon.app/docs/Rule/protocol_rule/)文档。
+
+`loon.lcf` 已在 `[Remote Rule]` 最前面引用这两个文件：
+
+```ini
+[Remote Rule]
+https://raw.githubusercontent.com/leonfox28/ClashConfig/main/rule/loon/Personal.lsr, policy=DIRECT, tag=Personal.lsr, enabled=true
+https://raw.githubusercontent.com/leonfox28/ClashConfig/main/rule/loon/personal-proxy.lsr, policy=个人服务, tag=personal-proxy.lsr, enabled=true
+```
+
+新文件推送到 GitHub 的 `main` 分支后，以上订阅地址才可下载。将规则用于其他 Loon 配置时，需要保留名为 `个人服务` 的策略组，或同步修改引用行中的 `policy`。
+
+这里保留个人直连规则在前、个人服务规则在后的顺序：`cpa.zenithconsulting.cn` 直连，其他 `zenithconsulting.cn` 子域名交给「个人服务」。Loon 版本将 `iroh.link` 及其子域名按协议拆分，避免整域直连覆盖 TCP 规则：
+
+| Loon 识别的协议 | 策略 |
+| --- | --- |
+| TCP、HTTP、HTTPS | 个人服务 |
+| UDP、QUIC、STUN | DIRECT |
+
+这些域名规则只作用于 Loon 能识别为 `iroh.link` 或其子域名的请求，不会自动覆盖直接使用对端 IP 的 P2P 连接。主配置中的 `disable-stun = true` 仍可能阻止 STUN 请求；将其分流到 DIRECT 不等于解除全局 STUN 禁用，参见官方[通用配置](https://nsloon.app/docs/General/#disable-stun)。
+
+`loon.lcf` 中原有的本地 `DOMAIN-SUFFIX,zenithconsulting.cn,个人服务` 已由远程规则接管，避免本地规则优先匹配后覆盖 `cpa.zenithconsulting.cn` 的直连例外。内网域名的 `[Host]` DNS 映射仍需配置在主配置中。
+
+Loon 文件是独立副本；之后修改 Clash 个人规则时，请同步维护 `rule/loon/` 下的对应文件，并保留上述协议分流和冗余内网 IP 的省略。
