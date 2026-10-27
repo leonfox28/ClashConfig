@@ -1,4 +1,4 @@
-#Date: 2026.10.26
+#Date: 2026.10.27
 #Author: Leon
 
 [General]
@@ -36,6 +36,7 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 
 [Proxy Group]
 节点选择 = select,HK,TW,SG,JP,KR,US,DIRECT
+个人服务 = select,DIRECT,节点选择,HK,TW,SG,JP,KR,US
 AI 服务 = select,节点选择,HK,TW,SG,JP,KR,US,DIRECT
 油管视频 = select,节点选择,HK,TW,SG,JP,KR,US,DIRECT
 谷歌服务 = select,节点选择,HK,TW,SG,JP,KR,US,DIRECT
@@ -62,6 +63,7 @@ US_Filter = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤�
 SG_Filter = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
 
 [Rule]
+DOMAIN-SUFFIX,zenithconsulting.cn,个人服务
 #Type:DOMAIN-SUFFIX,DOMAIN,DOMAIN-KEYWORD,USER-AGENT,URL-REGEX,IP-CIDR
 #Strategy:DIRECT,PROXY,REJECT
 #Options:no-resolve(only for IP-CIDR,IP-CIDR2,GEOIP,IP-ASN)
@@ -83,23 +85,36 @@ https://rule.kelee.one/Loon/SteamCN.lsr, policy=国内服务, tag=SteamCN.lsr, e
 https://rule.kelee.one/Loon/Game.lsr, policy=游戏平台, tag=Game.lsr, enabled=true
 https://rule.kelee.one/Loon/Microsoft.lsr, policy=微软服务, tag=Microsoft.lsr, enabled=true
 https://rule.kelee.one/Loon/Apple.lsr, policy=苹果服务, tag=Apple.lsr, enabled=true
-https://rule.kelee.one/Loon/China.lsr, policy=国内服务, tag=China.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaMaxNoIP.lsr, policy=国内服务, tag=ChinaMaxNoIP.lsr, enabled=true
 https://rule.kelee.one/Loon/ChinaIPs.lsr, policy=国内服务, tag=ChinaIPs.lsr, enabled=true
-https://raw.githubusercontent.com/Loon0x00/LoonLiteRules/main/direct/cn.list, policy=国内服务, tag=GEOIP_CN, enabled=true
+https://raw.githubusercontent.com/Loon0x00/LoonLiteRules/main/direct/cn.list, policy=国内服务, tag=GEOIP_CN, enabled=false
 
+[Host]
+*.huyuanzhe.family = server:10.0.0.4
+*.raptorsolutions.lan = server:10.0.20.2
+cpa.zenithconsulting.cn = server:223.5.5.5
 [Rewrite]
 
 [Script]
 
 [Plugin]
+https://kelee.one/Tool/Loon/Lpx/CoolApk_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/FleaMarket_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/PinDuoDuo_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Taobao_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/JD_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/QQMusic_remove_ads.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/12306_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Weibo_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Weibo_intl_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, pin=true, enabled=true
 https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, pin=true, enabled=true
 https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, enabled=false
-https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=节点选择, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=节点选择, enabled=false
 https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx, policy=DIRECT, enabled=true
+https://kelee.one/Tool/Loon/Lpx/TestFlightRegionUnlock.lpx, policy=DIRECT, enabled=false
 https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=节点选择, enabled=false
 https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=节点选择, enabled=false
 https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=节点选择, enabled=false
