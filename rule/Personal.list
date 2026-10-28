@@ -11,6 +11,6 @@ IP-CIDR,203.69.82.80/32,no-resolve
 IP-CIDR,203.69.82.10/32,no-resolve
 IP-CIDR,203.69.82.12/32,no-resolve
 DOMAIN-SUFFIX,raptorsolutions.lan
-DOMAIN-SUFFIX,iroh.link
+AND,((DOMAIN-SUFFIX,iroh.link),(NETWORK,UDP))
 DOMAIN-SUFFIX,relay.zedra.dev
 DOMAIN-SUFFIX,cpa.zenithconsulting.cn

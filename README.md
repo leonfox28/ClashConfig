@@ -106,6 +106,8 @@
 - 需要强制**直连**的个人域名或内网 IP，请添加至 `rule/Personal.list`。
 - 需要单独控制走向（走 `📲 个人服务` 策略组）的域名或规则，请添加至 `rule/personal-proxy.list`。
 
+`iroh.link` 按协议分流：`Personal.list` 仅匹配 UDP，`personal-proxy.list` 仅匹配 TCP，避免前置的个人直连规则覆盖 TCP 代理规则。需要代理 Relay 连接时，请在客户端将 `📲 个人服务` 切换到可用代理节点；`🎯 全球直连` 保持 `DIRECT`。三份模板均已将 `+.iroh.link` 排除在 fake-IP 外。域名规则不覆盖直接使用对端 IP 的 P2P UDP 连接。
+
 ### 4. Loon 个人规则
 
 `rule/loon/Personal.lsr` 从 `rule/Personal.list` 转换，省略已由主配置 `10.0.0.0/8` 绕过设置及 `Lan.lsr` 覆盖的 `10.21.20.221/32`，保留 15 条规则，其余 IP 规则保留 `no-resolve`。其中 `iroh.link` 的直连规则限定为 UDP，并显式包含 Loon 的 QUIC、STUN 协议类型。`rule/loon/personal-proxy.lsr` 保留 2 条规则，将 Mihomo 的 `NETWORK,TCP` 转换为 Loon 的 TCP、HTTP、HTTPS 协议条件。逻辑规则和协议规则需要 Loon 3.1.7 或更新版本，语法见官方[逻辑规则](https://nsloon.app/docs/Rule/logic_rule/)和[协议规则](https://nsloon.app/docs/Rule/protocol_rule/)文档。
