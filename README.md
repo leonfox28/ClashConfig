@@ -129,7 +129,7 @@ https://raw.githubusercontent.com/leonfox28/ClashConfig/main/rule/loon/personal-
 | TCP、HTTP、HTTPS | 个人服务 |
 | UDP、QUIC、STUN | DIRECT |
 
-这些域名规则只作用于 Loon 能识别为 `iroh.link` 或其子域名的请求，不会自动覆盖直接使用对端 IP 的 P2P 连接。主配置中的 `disable-stun = true` 仍可能阻止 STUN 请求；将其分流到 DIRECT 不等于解除全局 STUN 禁用，参见官方[通用配置](https://nsloon.app/docs/General/#disable-stun)。
+这些域名规则只作用于 Loon 能识别为 `iroh.link` 或其子域名的请求，不会自动覆盖直接使用对端 IP 的 P2P 连接。主配置已设置 `disable-stun = false`，关闭全局 STUN UDP 禁用；具体请求仍受其他规则及插件影响。将 STUN 分流到 DIRECT 本身不等于解除全局 STUN 禁用，参见官方[通用配置](https://nsloon.app/docs/General/#disable-stun)。
 
 `loon.lcf` 中原有的本地 `DOMAIN-SUFFIX,zenithconsulting.cn,个人服务` 已由远程规则接管，避免本地规则优先匹配后覆盖 `cpa.zenithconsulting.cn` 的直连例外。内网域名的 `[Host]` DNS 映射仍需配置在主配置中。
 
